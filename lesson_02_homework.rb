@@ -84,6 +84,7 @@ class Waitlist
 
   def seat(party_name)
     @list_of_parties.delete(party_name)
+    return @list_of_parties
   end
 end
 
@@ -100,7 +101,7 @@ puts myList.add_party('cats')
 
 puts myList.list()
 
-myList.seat('bears')
-myList.seat('cats')
+puts myList.seat('bears')
+puts myList.seat('cats')
 
 puts myList.inspect
