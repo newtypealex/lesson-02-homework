@@ -36,7 +36,7 @@ end
 # Fix Broken Code
 
 def area_of_triangle(base, height)
-  puts (base * height) / 2
+  (base * height) / 2
 end
 
 base = 7
@@ -63,27 +63,27 @@ puts area_of_triangle(base, height)
 
 class Waitlist
   # add your code here
-  attr_accessor :list_of_parties
+  attr_writer :list_of_parties
 
-  def initialize(list_of_parties = [])
+  def initialize()
     puts "calling initialize"
-    @list_of_parties = list_of_parties
+    @list_of_parties = []
   end
   
   def add_party(party_name)
     @list_of_parties.push(party_name)
     # puts list_of_parties.inspect
-    puts "#{party_name} has been added to the list"
+    "#{party_name} has been added to the list"
   end
 
   def list()
-    for party_name in list_of_parties
+    for party_name in @list_of_parties
       "#{party_name}"
     end
   end
 
   def seat(party_name)
-    list_of_parties.delete(party_name)
+    @list_of_parties.delete(party_name)
   end
 end
 
@@ -91,11 +91,11 @@ end
 myList = Waitlist.new
 # puts myList.inspect
 
-myList.add_party('bears')
-myList.add_party('cats')
-myList.add_party('dogs')
-myList.add_party('sharks')
-myList.add_party('birds')
+puts myList.add_party('bears')
+puts myList.add_party('cats')
+# myList.add_party('dogs')
+# myList.add_party('sharks')
+# myList.add_party('birds')
 # puts myList.inspect
 
 puts myList.list()
@@ -103,4 +103,4 @@ puts myList.list()
 myList.seat('bears')
 myList.seat('cats')
 
-puts myList.list()
+puts myList.inspect
